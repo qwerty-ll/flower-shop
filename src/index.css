@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-cream text-stone-800 antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* общий контейнер всех секций */
+  .page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-10;
+  }
+
+  /* прямоугольные кнопки с подписью капсом */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-700 text-white hover:bg-brand-800;
+  }
+  .btn-outline {
+    @apply btn border border-brand-700 text-brand-800 hover:bg-brand-50;
+  }
+  .btn-ghost {
+    @apply btn text-stone-600 hover:bg-stone-100;
+  }
+
+  /* на телефоне 16px чтобы ios не зумил при фокусе */
+  .input {
+    @apply w-full rounded-md border border-stone-300 bg-white px-3.5 py-3 text-base sm:text-sm outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100;
+  }
+
+  .label {
+    @apply block font-sans text-xs font-semibold uppercase tracking-wider text-stone-500 mb-1.5;
+  }
+
+  .icon-btn {
+    @apply relative p-2.5 rounded-full text-stone-700 hover:bg-stone-100 transition-colors;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
